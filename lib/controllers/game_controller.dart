@@ -18,6 +18,7 @@ class GameController extends StateNotifier<Game> {
       initializedGameWord: initGameWord,
       guessedLetters: [],
       gameWon: false,
+      initialized: true,
     );
 
     state = initializedGameState;
@@ -56,8 +57,26 @@ class GameController extends StateNotifier<Game> {
       gameWon: state.gameWon,
       initializedGameWord: state.initializedGameWord,
       guessedLetters: guessedLetters,
+      initialized: state.initialized,
     );
     debugPrint('GuessLetter: ${state.guessedLetters.toString()}');
     printState();
+    checkIfGuessWins();
+  }
+
+  void checkIfGuessWins() {
+    bool gameWon = true;
+    for (String letter in state.initializedGameWord) {
+      if (!state.guessedLetters.contains(letter)) {
+        gameWon = false;
+      }
+    }
+
+    state = Game(
+      gameWon: gameWon,
+      initializedGameWord: state.initializedGameWord,
+      guessedLetters: state.guessedLetters,
+      initialized: state.initialized,
+    );
   }
 }

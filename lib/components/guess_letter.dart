@@ -1,7 +1,7 @@
 import '../controllers/game_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../models/game.dart';
+
 // ignore_for_file: prefer_const_constructors
 
 class GuessLetter extends ConsumerWidget {
@@ -9,9 +9,9 @@ class GuessLetter extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    Game game = ref.watch(gameController);
+    //Game game = ref.watch(gameController);
     TextEditingController textController = TextEditingController(text: '');
-    //String gameWordRevealed = ref.read(gameController.notifier).gameWordRevealed();
+
     return Center(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -32,7 +32,7 @@ class GuessLetter extends ConsumerWidget {
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: Colors.white, // Set the border color to white
-                    width: 0.0, // Set the border width
+                    width: 1.0, // Set the border width
                   ),
                 ),
               ),
