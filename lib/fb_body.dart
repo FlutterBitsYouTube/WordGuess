@@ -1,11 +1,6 @@
-import 'package:fbhooks/components/game_start_button.dart';
-import 'package:fbhooks/components/game_winning_widget.dart';
-import 'package:fbhooks/controllers/game_controller.dart';
-import 'package:fbhooks/models/game.dart';
-
-import './components/draw_game_word.dart';
-import './components/guess_letter.dart';
-import './components/guessed_letters.dart';
+import './components/components.dart';
+import './controllers/game_controller.dart';
+import './models/game.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 // ignore_for_file: prefer_const_constructors
