@@ -7,7 +7,7 @@ class FBAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: const Text('Flutter Bits Hooks'),
-      backgroundColor: Colors.blueGrey,
+      //backgroundColor: Colors.blueGrey,
     );
   }
 

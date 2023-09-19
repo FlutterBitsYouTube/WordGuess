@@ -11,7 +11,10 @@ final gameController = StateNotifierProvider<GameController, Game>(
 class GameController extends StateNotifier<Game> {
   GameController() : super(Game.empty());
 
-  final List<String> initializingWords = ['flutter', 'riverpod', 'stateless'];
+  //final List<String> initializingWords = ['flutter', 'riverpod', 'stateless'];
+  final List<String> initializingWords = [
+    'flutter',
+  ];
 
   void initializeGame() {
     initializingWords.shuffle();
@@ -45,13 +48,12 @@ class GameController extends StateNotifier<Game> {
       }
     }
 
-    debugPrint('GameWordRevealed: ${gameHiddenWord.toString()}');
     return gameHiddenWord;
   }
 
   void guessLetter({required String guessedLetter}) {
     List<String> guessedLetters = state.guessedLetters.toList();
-    debugPrint('GuessLetter: ${state.guessedLetters.toString()}');
+
     if (guessedLetters.contains(guessedLetter)) {
       return;
     }
@@ -63,7 +65,7 @@ class GameController extends StateNotifier<Game> {
       guessedLetters: guessedLetters,
       initialized: state.initialized,
     );
-    debugPrint('GuessLetter: ${state.guessedLetters.toString()}');
+
     printState();
     checkIfGuessWins();
   }

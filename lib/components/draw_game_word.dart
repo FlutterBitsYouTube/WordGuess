@@ -24,12 +24,15 @@ class DrawGameWord extends ConsumerWidget {
             itemCount: game.initializedGameWord.length,
             itemBuilder: (context, index) {
               return Container(
-                color: Colors.black,
+                color: Colors.blue,
                 width: 45,
                 height: 45,
-                child: Text(
-                  gameWordRevealed[index],
-                  style: TextStyle(color: Colors.white, fontSize: 30),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    gameWordRevealed[index],
+                    style: TextStyle(color: Colors.white, fontSize: 30),
+                  ),
                 ),
               );
             },

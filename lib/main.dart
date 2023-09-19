@@ -14,10 +14,11 @@ class FBHooks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: Scaffold(
         appBar: const FBAppBar(),
         body: Container(
-          color: Colors.black,
+          color: Colors.blue[200],
           child: const FBBody(),
         ),
       ),

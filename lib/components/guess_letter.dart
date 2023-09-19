@@ -26,7 +26,7 @@ class GuessLetter extends ConsumerWidget {
               textAlign: TextAlign.center,
               cursorColor: Colors.white,
               decoration: const InputDecoration(
-                fillColor: Colors.black,
+                fillColor: Colors.blue,
                 filled: true,
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
