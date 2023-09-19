@@ -16,7 +16,7 @@ class GameStartButton extends ConsumerWidget {
     return Center(
       child: ElevatedButton(
           onPressed: () {
-            ref.read(gameController.notifier).initializeGame(initializedWord: 'flutter');
+            ref.read(gameController.notifier).initializeGame();
           },
           child: Text(
             buttonText,

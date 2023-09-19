@@ -13,7 +13,6 @@ class DrawGameWord extends ConsumerWidget {
 
     List<String> gameWordRevealed = ref.read(gameController.notifier).gameWordRevealed();
 
-    // String gameWordRevealed = ref.read(gameController.notifier).gameWordRevealed();
     return Center(
       child: SizedBox(
         width: 500,
@@ -38,12 +37,5 @@ class DrawGameWord extends ConsumerWidget {
         ),
       ),
     );
-    //   return Center(
-    //     child: Text(
-    //       ref.read(gameController.notifier).gameWordRevealed(),
-    //       style: TextStyle(color: Colors.white, fontSize: 30),
-    //     ),
-    //   );
-    // }
   }
 }

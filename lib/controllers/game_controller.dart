@@ -11,8 +11,12 @@ final gameController = StateNotifierProvider<GameController, Game>(
 class GameController extends StateNotifier<Game> {
   GameController() : super(Game.empty());
 
-  void initializeGame({required String initializedWord}) {
-    List<String> initGameWord = initializedWord.toUpperCase().split('');
+  final List<String> initializingWords = ['flutter', 'riverpod', 'stateless'];
+
+  void initializeGame() {
+    initializingWords.shuffle();
+    String initializingWordPicker = initializingWords.first;
+    List<String> initGameWord = initializingWordPicker.toUpperCase().split('');
 
     Game initializedGameState = Game(
       initializedGameWord: initGameWord,
@@ -78,5 +82,13 @@ class GameController extends StateNotifier<Game> {
       guessedLetters: state.guessedLetters,
       initialized: state.initialized,
     );
+  }
+
+  String getFormattedGuessedLetters() {
+    List<String> guessedLetters = state.guessedLetters;
+
+    guessedLetters.sort();
+
+    return guessedLetters.join("");
   }
 }
